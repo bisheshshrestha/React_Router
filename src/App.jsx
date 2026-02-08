@@ -4,6 +4,8 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Navbar from "./components/Navbar";
+import User from "./Pages/User";
+import Dynamic_User from "./Pages/Dynamic_User";
 
 const App = () => {
   return (
@@ -14,6 +16,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/user" element={<User />} />
+          <Route path="/user/:id" element={<Dynamic_User />} />
         </Routes>
       </Router>
     </>
