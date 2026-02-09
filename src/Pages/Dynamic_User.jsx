@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 const Dynamic_User = () => {
   // console.log("UserParams = ", useParams());
@@ -11,7 +11,10 @@ const Dynamic_User = () => {
     { id: 4, name: "Batman", gmail: "batman@gmail.com", age: 20 },
   ];
   const specific_user = user.find((data) => data.id == id);
-  console.log(specific_user);
+  // console.log(specific_user);
+  console.log(useLocation());
+
+  const location = useLocation();
 
   return (
     <div>
@@ -19,6 +22,12 @@ const Dynamic_User = () => {
       <h1>Name= {specific_user.name}</h1>
       <h1>Gmail= {specific_user.gmail}</h1>
       <h1>Age= {specific_user.age}</h1>
+
+      {location.pathname == "/user/3" && (
+        <div>
+          <h1>Hello {specific_user.name}</h1>
+        </div>
+      )}
     </div>
   );
 };
