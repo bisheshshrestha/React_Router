@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 const Dynamic_User = () => {
   // console.log("UserParams = ", useParams());
@@ -15,6 +15,7 @@ const Dynamic_User = () => {
   console.log(useLocation());
 
   const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -28,6 +29,10 @@ const Dynamic_User = () => {
           <h1>Hello {specific_user.name}</h1>
         </div>
       )}
+
+      <div>
+        <button onClick={() => navigate("/")}>Go To Home</button>
+      </div>
     </div>
   );
 };
