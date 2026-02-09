@@ -6,12 +6,14 @@ import Contact from "./Pages/Contact";
 import Navbar from "./components/Navbar";
 import User from "./Pages/User";
 import Dynamic_User from "./Pages/Dynamic_User";
+import Nav from "./components/Nav";
 
 const App = () => {
   return (
     <>
       <Router>
-        <Navbar />
+        {/* <Navbar /> */}
+        <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
